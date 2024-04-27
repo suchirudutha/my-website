@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>SUCHIR</title>
+	<link rel="stylesheet" type="text/css" href="suchir.css">
+</head>
+<body>
+	<header>
+		<h1>My Art Gallery</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="types of art.html">Types of drawing</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+				<li><a href="Contact.html">Contact</a></li>
+				<li style="text-align: center;"><a href="#">Design your <br>own art</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5G752HBDDK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5G752HBDDK');
+</script>
+	<div class="search">
+		<input class="srch" type="search" name="" placeholder="Type To text">
+		<a href="#"> <button class="btn">Search</button></a>
+	</div>
+
+	<div class="slideshow-container">
+		<div class="slide-left">
+		  <img src="i11.jpg"  >
+		</div>
+		<div class="slide-right">
+		  <img src="i12.jpg"  >
+		</div>
+		<div class="slide-left">
+		  <img src="i13.jpg"  >
+		</div>
+		<div class="slide-right">
+		  <img src="image19.jpg" >
+		</div>
+		<div class="slide-left">
+			<img src="image30.jpg" >
+		</div>
+		<div class="slide-right">
+	        <img src="image39.jpg" >
+	    </div><img src="https://tryhackme-badges.s3.amazonaws.com/21suchir.png" alt="TryHackMe">
+	</div>
+	</div>
+
+
+	 
+	<script > 
+	 var slides = document.querySelectorAll('.slide-left, .slide-right');
+     var currentSlide = 0;
+     var slideInterval = setInterval(nextSlide, 2000);
+     
+	 function nextSlide() {
+      slides[currentSlide].classList.remove('show');
+      slides[currentSlide].classList.add('hide');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.remove('hide');
+      slides[currentSlide].classList.add('show');
+      }
+	</script>
+	<script src="https://tryhackme.com/badge/1998755"></script>
+	 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+	  
+	<footer style="margin-top: 200px;">
+		<div class="icons" style="font-size: 44px;">
+			<a href="https://instagram.com/__suchir__"><ion-icon name="logo-instagram"></ion-icon></a>
+			<a href="https://www.youtube.com/channel/UCq06AM_uFEPgVVYlp5FYixA"><ion-icon name="logo-youtube"></ion-icon></a>
+			<a href="https://twitter.com/suchir55937325"><ion-icon name="logo-twitter"></ion-icon></a>
+			 
+			<a href="https://www.linkedin.com/in/suchir-udutha-375985212"><ion-icon name="logo-linkedin"></ion-icon></a>
+		</div>
+		
+	  
+		<p>&copy; 2023 My Art Gallery</p>
+	</footer>
+	 
+</body>
+</html>
