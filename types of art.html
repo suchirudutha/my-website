@@ -1,47 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Types of drawing</title>
-  </head>
-  <body>
-    <header>
-      <h1>Types of drawing</h1>
-      <h2>Types of drawing styles include:</h2>
-  
-    </header>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5G752HBDDK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5G752HBDDK');
-</script>
-    <main>
-      <section>
-        <h2><a href="caricature drawing.html">1. Caricature drawing</a> </h2>
-        <ul>
-          <li> </li>
-        
-           
-        </ul>
-      </section>
-      <section>
-        <h2> </h2>
-        <ul>
-          <li> </li>
-          
-        </ul>
-      </section>
-      <section>
-        <h2> </h2>
-        <ul>
-          <li> </li>
-           
-        </ul>
-      </section>
-    </main>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11100f">
+  <meta name="description" content="Explore drawing approaches and art styles in Suchir's personal art journal.">
+  <title>Art Styles | Suchir Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="suchir.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Suchir Gallery home"><span class="brand-mark">S.</span><span>SUCHIR<span class="brand-muted">GALLERY</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Toggle navigation</span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="gallery.html">Gallery</a><a class="active" href="types%20of%20art.html">Art styles</a><a href="about.html">About</a><a class="nav-contact" href="Contact.html">Get in touch <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main" class="styles-page section-wrap">
+    <section class="styles-hero">
+      <p class="eyebrow"><span class="eyebrow-line"></span> DIFFERENT WAYS TO MAKE A MARK</p>
+      <h1>One pencil.<br><em>Many possibilities.</em></h1>
+      <p>Drawing styles each have their own rhythm. Some exaggerate, some observe, and some simplify the world into its essential shapes. Explore a few starting points below.</p>
+    </section>
+    <section class="style-grid" aria-label="Drawing styles">
+      <a class="style-card style-card-featured" href="caricature%20drawing.html">
+        <div class="style-card-image"><img src="image19.jpg" alt="Artwork from the gallery" loading="lazy"><span class="style-index">01 / FEATURED</span><span class="style-open" aria-hidden="true">↗</span></div>
+        <div class="style-card-copy"><span class="style-tag">EXPRESSION · CHARACTER</span><h2>Caricature drawing</h2><p>Play with recognisable features, expressive shapes, and personality. Caricature is about capturing the character of a subject, not simply copying every detail.</p><span class="style-read">Explore this style <b>→</b></span></div>
+      </a>
+      <article class="style-card">
+        <div class="style-card-image"><img src="i11.jpg" alt="Detailed sketch from the collection" loading="lazy"><span class="style-index">02 / OBSERVE</span></div>
+        <div class="style-card-copy"><span class="style-tag">LINE · DETAIL</span><h2>Line drawing</h2><p>Build an image with contours, marks, and the spaces between them. A confident line can suggest volume without filling every surface.</p><a class="style-read" href="gallery.html">See sketches <b>→</b></a></div>
+      </article>
+      <article class="style-card">
+        <div class="style-card-image"><img src="image30.jpg" alt="Form and contrast study from the collection" loading="lazy"><span class="style-index">03 / EXPLORE</span></div>
+        <div class="style-card-copy"><span class="style-tag">SHAPE · VALUE</span><h2>Form &amp; shading</h2><p>Use light, shadow, and contrast to make flat marks feel dimensional. Small value changes can completely shift the mood of a drawing.</p><a class="style-read" href="gallery.html">Discover the gallery <b>→</b></a></div>
+      </article>
+    </section>
+    <section class="styles-cta"><div><p class="eyebrow">LET YOUR EYE WANDER</p><h2>See what the sketchbook <em>holds.</em></h2></div><a class="button button-light" href="gallery.html">Browse all artwork <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">S.</span><span>SUCHIR<span class="brand-muted">GALLERY</span></span></a><p>A personal collection of art, ideas, and ongoing experiments.</p><div class="footer-links"><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="Contact.html">Contact</a><a href="https://www.instagram.com/__suchir__/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/suchir-udutha-375985212" target="_blank" rel="noreferrer">LinkedIn ↗</a></div><div class="footer-bottom"><span>© <span id="year">2026</span> Suchir Gallery</span><span>Made with intention.</span></div></footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-nav');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('is-open', !open);
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('is-open');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
