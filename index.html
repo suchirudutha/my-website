@@ -1,90 +1,80 @@
-<!DOCTYPE html>
-<html>
-<head> 
-	<title>SUCHIR</title>
-	<link rel="stylesheet" type="text/css" href="suchir.css">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11100f">
+  <meta name="description" content="Explore Suchir's art gallery: original sketches, expressive studies, and creative experiments.">
+  <title>Suchir Gallery | Art, Sketches & Creative Studies</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="suchir.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-	<header>
-		<h1>My Art Gallery</h1>
-		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="types of art.html">Types of drawing</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="gallery.html">Gallery</a></li>
-				<li><a href="Contact.html">Contact</a></li>
-				<li style="text-align: center;"><a href="#">Design your <br>own art</a></li>
-			</ul>
-		</nav>
-	</header>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5G752HBDDK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Suchir Gallery home"><span class="brand-mark">S.</span><span>SUCHIR<span class="brand-muted">GALLERY</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Toggle navigation</span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+      <a class="active" href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="types%20of%20art.html">Art styles</a><a href="about.html">About</a><a class="nav-contact" href="Contact.html">Get in touch <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
 
-  gtag('config', 'G-5G752HBDDK');
-</script>
-	<div class="search">
-		<input class="srch" type="search" name="" placeholder="Type To text">
-		<a href="#"> <button class="btn">Search</button></a>
-	</div>
+  <main id="main">
+    <section class="hero section-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A PERSONAL ART JOURNAL</p>
+        <h1>Art that makes<br>you <em>look twice.</em></h1>
+        <p class="hero-intro">A growing collection of sketches, studies, and visual experiments by Suchir. Made with curiosity, patience, and a little bit of feeling.</p>
+        <div class="hero-actions"><a class="button button-light" href="gallery.html">Explore the gallery <span aria-hidden="true">↗</span></a><a class="text-link" href="about.html">Meet the artist <span aria-hidden="true">→</span></a></div>
+        <div class="hero-note"><span class="note-dot"></span> Independent artist · Always learning</div>
+      </div>
+      <div class="hero-art" aria-label="Artwork preview">
+        <div class="art-frame art-frame-back"><img src="i12.jpg" alt="" fetchpriority="high"></div>
+        <div class="art-frame art-frame-main"><img src="image19.jpg" alt="Featured artwork from Suchir's gallery" fetchpriority="high"></div>
+        <div class="art-stamp"><span>ART</span><span>IS A</span><span>FEELING.</span></div>
+        <div class="hero-caption"><span>SELECTED STUDY</span><span>01 / ONGOING</span></div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true"><span></span> SCROLL TO EXPLORE</div>
+    </section>
 
-	<div class="slideshow-container">
-		<div class="slide-left">
-		  <img src="i11.jpg"  >
-		</div>
-		<div class="slide-right">
-		  <img src="i12.jpg"  >
-		</div>
-		<div class="slide-left">
-		  <img src="i13.jpg"  >
-		</div>
-		<div class="slide-right">
-		  <img src="image19.jpg" >
-		</div>
-		<div class="slide-left">
-			<img src="image30.jpg" >
-		</div>
-		<div class="slide-right">
-	        <img src="image39.jpg" >
-	    </div><img src="https://tryhackme-badges.s3.amazonaws.com/21suchir.png" alt="TryHackMe">
-	</div>
-	</div>
+    <section class="featured section-wrap" id="selected-works">
+      <div class="section-heading"><div><p class="eyebrow">A FEW FAVOURITES</p><h2>Selected <em>works.</em></h2></div><a class="text-link" href="gallery.html">View all artwork <span aria-hidden="true">↗</span></a></div>
+      <div class="work-grid">
+        <a class="work-card work-tall" href="gallery.html"><div class="work-image"><img src="i11.jpg" alt="Artwork study one" loading="lazy"><span class="work-arrow" aria-hidden="true">↗</span></div><div class="work-meta"><div><h3>Lines &amp; Layers</h3><p>Sketchbook study</p></div><span class="work-number">01</span></div></a>
+        <a class="work-card work-offset" href="gallery.html"><div class="work-image"><img src="image30.jpg" alt="Artwork study two" loading="lazy"><span class="work-arrow" aria-hidden="true">↗</span></div><div class="work-meta"><div><h3>Quiet Contrast</h3><p>Form exploration</p></div><span class="work-number">02</span></div></a>
+        <a class="work-card" href="gallery.html"><div class="work-image"><img src="image39.jpg" alt="Artwork study three" loading="lazy"><span class="work-arrow" aria-hidden="true">↗</span></div><div class="work-meta"><div><h3>In Progress</h3><p>Visual experiments</p></div><span class="work-number">03</span></div></a>
+      </div>
+    </section>
 
+    <section class="manifesto">
+      <div class="manifesto-inner section-wrap"><p class="eyebrow">THE IDEA BEHIND THE WORK</p><p class="manifesto-quote">“Creativity begins when you give an idea the space <em>to become something.</em>”</p><div class="manifesto-bottom"><span>A work in progress, by design.</span><a class="text-link" href="about.html">A little about me <span aria-hidden="true">→</span></a></div></div>
+    </section>
 
-	 
-	<script > 
-	 var slides = document.querySelectorAll('.slide-left, .slide-right');
-     var currentSlide = 0;
-     var slideInterval = setInterval(nextSlide, 2000);
-     
-	 function nextSlide() {
-      slides[currentSlide].classList.remove('show');
-      slides[currentSlide].classList.add('hide');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.remove('hide');
-      slides[currentSlide].classList.add('show');
-      }
-	</script>
-	<script src="https://tryhackme.com/badge/1998755"></script>
-	 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <section class="about-strip section-wrap">
+      <div class="about-image"><img src="i13.jpg" alt="A glimpse into the artist's collection" loading="lazy"><span class="image-label">FROM THE SKETCHBOOK</span></div>
+      <div class="about-copy"><p class="eyebrow">HELLO, I'M SUCHIR</p><h2>Curiosity is my<br><em>favourite tool.</em></h2><p>I create sketches and explore different art styles, learning something new with every piece. This gallery is a home for the work, the experiments, and everything still taking shape.</p><a class="button button-outline" href="about.html">Read my story <span aria-hidden="true">→</span></a></div>
+    </section>
 
-	  
-	<footer style="margin-top: 200px;">
-		<div class="icons" style="font-size: 44px;">
-			<a href="https://instagram.com/__suchir__"><ion-icon name="logo-instagram"></ion-icon></a>
-			<a href="https://www.youtube.com/channel/UCq06AM_uFEPgVVYlp5FYixA"><ion-icon name="logo-youtube"></ion-icon></a>
-			<a href="https://twitter.com/suchir55937325"><ion-icon name="logo-twitter"></ion-icon></a>
-			 
-			<a href="https://www.linkedin.com/in/suchir-udutha-375985212"><ion-icon name="logo-linkedin"></ion-icon></a>
-		</div>
-		
-	  
-		<p>&copy; 2023 My Art Gallery</p>
-	</footer>
-	 
+    <section class="contact-band"><div class="section-wrap contact-band-inner"><div><p class="eyebrow">HAVE AN IDEA?</p><h2>Let's make room<br>for <em>something creative.</em></h2></div><a class="button button-light" href="Contact.html">Get in touch <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">S.</span><span>SUCHIR<span class="brand-muted">GALLERY</span></span></a><p>A personal collection of art, ideas, and ongoing experiments.</p><div class="footer-links"><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="Contact.html">Contact</a><a href="https://www.instagram.com/__suchir__/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/suchir-udutha-375985212" target="_blank" rel="noreferrer">LinkedIn ↗</a></div><div class="footer-bottom"><span>© <span id="year">2026</span> Suchir Gallery</span><span>Made with intention.</span></div></footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-nav');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('is-open', !open);
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('is-open');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
