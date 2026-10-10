@@ -1,23 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11100f">
+  <meta name="description" content="An introduction to caricature drawing: expression, exaggeration, and the art of capturing character.">
+  <title>Caricature Drawing | Suchir Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="suchir.css">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5G752HBDDK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5G752HBDDK');
-</script>
-<body><p>Caricature drawings are images that<br> depict their subjects in oversimplified<br> or overdramatized manners. Some hallmarks<br> of caricatures may include enlarging or<br> shrinking someone's facial features or personifying<br> an object. Artists may use caricature in<br> animation, advertising or graphic design.
-
-</p>
-    
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Suchir Gallery home"><span class="brand-mark">S.</span><span>SUCHIR<span class="brand-muted">GALLERY</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Toggle navigation</span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="gallery.html">Gallery</a><a class="active" href="types%20of%20art.html">Art styles</a><a href="about.html">About</a><a class="nav-contact" href="Contact.html">Get in touch <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main" class="caricature-page section-wrap">
+    <section class="caricature-hero">
+      <div class="caricature-copy"><p class="eyebrow"><span class="eyebrow-line"></span> A CLOSER LOOK AT THE CRAFT</p><p class="caricature-index">STYLE NOTE / 01</p><h1>Character,<br>with a little <em>emphasis.</em></h1><p>Caricature drawing uses selective exaggeration to reveal what makes a person or subject recognisable. It is not simply about making features larger; it is about identifying the details that carry personality, expression, and presence.</p><div class="hero-actions"><a class="button button-light" href="gallery.html">Explore the collection <span aria-hidden="true">↗</span></a><a class="text-link" href="types%20of%20art.html">All art styles <span aria-hidden="true">→</span></a></div></div>
+      <div class="caricature-visual"><img src="image19.jpg" alt="Artwork selected from the Suchir Gallery collection" fetchpriority="high"><span>OBSERVE THE FEATURE. FIND THE CHARACTER.</span></div>
+    </section>
+    <section class="caricature-details">
+      <div class="caricature-detail-intro"><p class="eyebrow">THE ESSENTIALS</p><h2>What gives a caricature<br><em>its character?</em></h2><p>Strong caricature begins with observation. The artist studies proportions and expressions, then decides which features deserve emphasis and which details can be simplified.</p></div>
+      <div class="caricature-detail-list"><article><span>01</span><div><h3>Recognition</h3><p>Keep the distinctive qualities that make the subject identifiable, even when the proportions are intentionally altered.</p></div></article><article><span>02</span><div><h3>Exaggeration</h3><p>Push selected shapes, gestures, or expressions with purpose. A small, deliberate change can communicate more than exaggerating everything.</p></div></article><article><span>03</span><div><h3>Simplification</h3><p>Remove visual noise so the important forms remain clear. Every line should support the overall impression.</p></div></article><article><span>04</span><div><h3>Expression</h3><p>Pay attention to the eyes, mouth, posture, and the relationships between them. Character often lives in those subtle connections.</p></div></article></div>
+    </section>
+    <section class="caricature-note"><p class="eyebrow">A PRACTICE TO TRY</p><h2>Look first. Draw second.</h2><p>Choose a face, spend a moment observing its most distinctive features, and make a quick study using only a few confident lines. Focus on capturing the impression rather than chasing photographic accuracy.</p><a class="button button-outline" href="gallery.html">Return to the artwork <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">S.</span><span>SUCHIR<span class="brand-muted">GALLERY</span></span></a><p>A personal collection of art, ideas, and ongoing experiments.</p><div class="footer-links"><a href="gallery.html">Gallery</a><a href="types%20of%20art.html">Art styles</a><a href="about.html">About</a><a href="Contact.html">Contact</a><a href="https://www.instagram.com/__suchir__/" target="_blank" rel="noreferrer">Instagram ↗</a></div><div class="footer-bottom"><span>© <span id="year">2026</span> Suchir Gallery</span><span>Created with intention.</span></div></footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-nav');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('is-open', !open);
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('is-open');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
