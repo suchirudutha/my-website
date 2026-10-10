@@ -1,93 +1,141 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>gallery</title>
-    <style>
-        /* Set the height and width of the scrolling area */
-        #scroll {
-          height: 400px;
-          width: 400px;
-          overflow: auto;
-        }
-  
-        /* Set the size and margin of the images */
-        img {
-          height: 25%;
-          width: 25%;
-          margin-bottom: 10px;
-        }
-    </style>
-    <link rel="stylesheet" type="text/css" href="styles1.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11100f">
+  <meta name="description" content="Explore the Suchir Gallery artwork collection. Open each piece for a full-size viewing experience.">
+  <title>Gallery | Suchir Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="suchir.css">
+  <style>
+    .gallery-intro{padding:78px 0 34px}.gallery-intro h1{font:500 clamp(46px,7vw,78px)/1.05 var(--serif);letter-spacing:-.045em;margin:0 0 18px}.gallery-intro h1 em{color:var(--accent);font-weight:500}.gallery-intro>p:last-child{max-width:650px;color:var(--muted);font-size:14px;line-height:1.9}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 28px;padding:18px 0 110px}.gallery-card{min-width:0;position:relative}.gallery-thumb{height:390px;position:relative;display:flex;align-items:center;justify-content:center;padding:18px;overflow:hidden;background:linear-gradient(145deg,#30251f,#171514);border:1px solid rgba(255,255,255,.12);cursor:zoom-in;isolation:isolate}.gallery-thumb:before{content:"";position:absolute;inset:-25%;z-index:-1;background:radial-gradient(ellipse at 30% 25%,var(--glow),transparent 45%),radial-gradient(ellipse at 75% 80%,var(--glow2),transparent 45%);filter:blur(20px);opacity:.8;transition:transform .5s}.gallery-card:hover .gallery-thumb:before{transform:scale(1.12) rotate(8deg)}.gallery-thumb img{width:100%;height:100%;object-fit:contain;transition:transform .45s;filter:drop-shadow(0 18px 22px #0008)}.gallery-card:hover .gallery-thumb img{transform:scale(1.025)}.gallery-thumb .view-label{position:absolute;right:12px;top:12px;padding:7px 10px;background:#11100fce;border:1px solid #ffffff30;font-size:9px;letter-spacing:.14em;text-transform:uppercase}.gallery-info{display:grid;grid-template-columns:1fr auto;gap:12px;padding:16px 2px 0}.gallery-info h2{font:500 21px/1.25 var(--serif);margin:0 0 7px}.gallery-info p{font-size:12px;color:var(--muted);line-height:1.75;margin:0;max-width:390px}.ratings{display:flex;flex-direction:column;gap:6px;align-items:flex-end;white-space:nowrap}.rating{font-size:10px;color:#d8d0c3;letter-spacing:.03em}.rating strong{color:var(--accent);font-size:12px}.gallery-number{position:absolute;top:12px;left:12px;font-size:10px;letter-spacing:.14em;color:#f4efe7;background:#11100fba;padding:6px 8px}
+    .gallery-card.featured-girl .gallery-thumb{outline:2px solid var(--accent);outline-offset:4px}.gallery-card.featured-girl .gallery-thumb:after{content:"FEATURED PORTRAIT";position:absolute;left:12px;bottom:12px;background:var(--accent);color:#171811;font-size:9px;font-weight:700;letter-spacing:.12em;padding:8px 10px}
+    .lightbox{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:clamp(16px,3vw,42px);background:#090909f2;backdrop-filter:blur(18px)}.lightbox.open{display:flex}.lightbox-scene{position:absolute;inset:0;overflow:hidden;transition:background .25s}.lightbox-scene:before,.lightbox-scene:after{content:"";position:absolute;width:70vw;height:70vw;max-width:900px;max-height:900px;border-radius:50%;filter:blur(90px);opacity:.55}.lightbox-scene:before{left:-15%;top:-25%;background:var(--scene-a)}.lightbox-scene:after{right:-18%;bottom:-32%;background:var(--scene-b)}.lightbox-content{position:relative;z-index:1;width:min(1200px,100%);height:min(90vh,900px);display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,300px);gap:clamp(18px,3vw,42px);align-items:center}.lightbox-art{height:100%;min-height:0;display:flex;align-items:center;justify-content:center;padding:12px;background:linear-gradient(145deg,#ffffff0b,#00000020);border:1px solid #ffffff25;box-shadow:0 30px 100px #0007}.lightbox-art img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 24px 38px #0008)}.lightbox-copy{color:#f5f0e8}.lightbox-kicker{font-size:9px;letter-spacing:.2em;color:#ffffff9c;text-transform:uppercase}.lightbox-copy h2{font:500 clamp(27px,3vw,42px)/1.15 var(--serif);margin:13px 0}.lightbox-copy p{font-size:13px;line-height:1.9;color:#ffffffc2}.lightbox-ratings{display:flex;flex-direction:column;gap:8px;border-top:1px solid #ffffff30;padding-top:18px;margin-top:22px}.lightbox-ratings span{font-size:11px;color:#ffffffc2}.lightbox-ratings strong{color:var(--scene-a);font-size:14px}.lightbox-close,.lightbox-prev,.lightbox-next{position:absolute;z-index:3;border:1px solid #ffffff45;background:#11100fb8;color:white;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(10px)}.lightbox-close{right:18px;top:18px;width:44px;height:44px;font-size:25px}.lightbox-prev,.lightbox-next{top:50%;width:42px;height:48px;font-size:24px;transform:translateY(-50%)}.lightbox-prev{left:18px}.lightbox-next{right:18px}.lightbox-close:hover,.lightbox-prev:hover,.lightbox-next:hover{background:var(--accent);color:#111}.lightbox-hint{font-size:10px!important;letter-spacing:.08em;color:#ffffff8c!important;margin-top:22px}
+    @media(max-width:950px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:35px 20px}.gallery-thumb{height:350px}.lightbox-content{grid-template-columns:minmax(0,1fr) 240px}.lightbox-prev{left:8px}.lightbox-next{right:8px}}
+    @media(max-width:650px){.gallery-intro{padding-top:54px}.gallery-grid{grid-template-columns:1fr;gap:32px;padding-bottom:75px}.gallery-thumb{height:min(112vw,520px)}.gallery-info h2{font-size:22px}.lightbox{padding:12px}.lightbox-content{height:100%;grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto;gap:12px;padding:38px 0 10px}.lightbox-art{min-height:0;padding:4px}.lightbox-copy{padding:0 8px 8px}.lightbox-copy h2{font-size:27px;margin:7px 0}.lightbox-copy p{font-size:11px;line-height:1.6;margin:6px 0}.lightbox-ratings{flex-direction:row;flex-wrap:wrap;gap:8px 16px;padding-top:9px;margin-top:8px}.lightbox-ratings span{font-size:10px}.lightbox-hint{display:none}.lightbox-close{top:8px;right:8px;width:38px;height:38px}.lightbox-prev,.lightbox-next{top:38%;width:34px;height:42px}}
+    @media(prefers-reduced-motion:reduce){.gallery-thumb img,.gallery-thumb:before{transition:none}}
+  </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5G752HBDDK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5G752HBDDK');
-</script>
 <body>
-    <div class="image-container">
-        <img src="image1.jpg" alt="Image 1" onclick="openImage(this)">
-        <img src="image2.jpg" alt="Image 2" onclick="openImage(this)">
-        <img src="image3.jpg" alt="Image 3" onclick="openImage(this)">
-        <img src="image4.jpg" alt="Image 4" onclick="openImage(this)">
-         
-        
-        <img src="image11.jpg" alt="Image 11" onclick="openImage(this)">
-        <img src="image12.jpg" alt="Image 12" onclick="openImage(this)">
-        <img src="image13.jpg" alt="Image 13" onclick="openImage(this)">
-
-        <img src="image14.jpg" alt="Image 14" onclick="openImage(this)">
-         
-        <img src="image24.jpg" alt="Image 24" onclick="openImage(this)">
-         
-        <img src="image27.jpg" alt="Image 27" onclick="openImage(this)">
-       
-
-        
-
-         
-        <img src="image34.jpg" alt="Image 34" onclick="openImage(this)">
-        <img src="image35.jpg" alt="Image 35" onclick="openImage(this)">
-        <img src="image36.jpg" alt="Image 36" onclick="openImage(this)">
-         
-        <img src="i5.jpg" alt="i5" onclick="openImage(this)">
-        <img src="i6.jpg" alt="i6" onclick="openImage(this)">
-       
-        
-        
-        
-        
-        
-
-        <img src="image38.jpg" alt="Image 38" onclick="openImage(this)">
-        <img src="i13.jpg" alt="i13" onclick="openImage(this)">
-        <img src="image15.jpg" alt="Image 15" onclick="openImage(this)">
-         
-        <img src="image19.jpg" alt="Image 19" onclick="openImage(this)">
-        <img src="image20.jpg" alt="Image 20" onclick="openImage(this)">
-        
-        <img src="image23.jpg" alt="Image 23" onclick="openImage(this)">
-        <img src="image29.jpg" alt="Image 29" onclick="openImage(this)">
-
-        <img src="image30.jpg" alt="Image 30" onclick="openImage(this)">
-       
-        <img src="image39.jpg" alt="Image 39" onclick="openImage(this)">
-        <img src="image40.jpg" alt="Image 40" onclick="openImage(this)">
-        <img src="i12.jpg" alt="i12" onclick="openImage(this)">
-        <img src="i11.jpg" alt="i11" onclick="openImage(this)">
-        <img src="i4.jpg" alt="i4" onclick="openImage(this)">
-         
-        <img src="i14.jpg" alt="i14" onclick="openImage(this)">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Suchir Gallery home"><span class="brand-mark">S.</span><span>SUCHIR<span class="brand-muted">GALLERY</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Toggle navigation</span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a><a class="active" href="gallery.html">Gallery</a><a href="types%20of%20art.html">Art styles</a><a href="about.html">About</a><a class="nav-contact" href="Contact.html">Get in touch <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main" class="section-wrap">
+    <section class="gallery-intro">
+      <p class="eyebrow"><span class="eyebrow-line"></span> THE COLLECTION</p>
+      <h1>Every piece has<br><em>its own atmosphere.</em></h1>
+      <p>Explore the collection at your own pace. Each artwork keeps its original proportions instead of being cropped to fit a box. Open any piece for a full-size view with a custom colour-scene inspired by the artwork.</p>
+    </section>
+    <section class="gallery-grid" id="gallery-grid" aria-label="Artwork collection"></section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">S.</span><span>SUCHIR<span class="brand-muted">GALLERY</span></span></a><p>A personal collection of art, ideas, and ongoing experiments.</p><div class="footer-links"><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="Contact.html">Contact</a><a href="https://www.instagram.com/__suchir__/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/suchir-udutha-375985212" target="_blank" rel="noreferrer">LinkedIn ↗</a></div><div class="footer-bottom"><span>© <span id="year">2026</span> Suchir Gallery</span><span>Made with intention.</span></div></footer>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <div class="lightbox-scene" id="lightbox-scene"></div>
+    <button class="lightbox-close" id="close-lightbox" aria-label="Close artwork view">×</button>
+    <button class="lightbox-prev" id="prev-art" aria-label="Previous artwork">‹</button>
+    <button class="lightbox-next" id="next-art" aria-label="Next artwork">›</button>
+    <div class="lightbox-content">
+      <div class="lightbox-art"><img id="lightbox-image" alt=""></div>
+      <div class="lightbox-copy"><p class="lightbox-kicker" id="lightbox-kicker">Artwork</p><h2 id="lightbox-title"></h2><p id="lightbox-description"></p><div class="lightbox-ratings"><span>Artwork rating <strong id="art-rating"></strong></span><span>Scene rating <strong id="scene-rating"></strong></span></div><p class="lightbox-hint">Use ← → to explore · Esc to close</p></div>
     </div>
-     
-    <script>function openImage(img) {
-      window.location.href = img.src;
+  </div>
+  <script>
+    const artworks = [
+      ["image1.jpg","First Impressions","An opening study in visual balance, where the first lines set the mood and invite a slower look.",4.6,4.8],
+      ["image2.jpg","Quiet Geometry","A study of shape and spacing. The composition rewards a second look at how the elements sit together.",4.5,4.7],
+      ["image3.jpg","Soft Contrast","A visual exploration of contrast, subtle detail, and the character that emerges between light and shadow.",4.7,4.6],
+      ["image4.jpg","A Study in Rhythm","A collection of marks and forms that gives the eye a gentle path through the composition.",4.6,4.8],
+      ["image11.jpg","Lines & Layers","An expressive sketchbook moment, with the marks and layers giving the piece its own handmade character.",4.8,4.7],
+      ["image12.jpg","Held in Light","A quiet study of tone and atmosphere, inviting attention to the small details that might be missed at first glance.",4.7,4.9],
+      ["image13.jpg","Collected Details","A close look at the details that give an artwork its personality, from the overall shape to its finer touches.",4.5,4.6],
+      ["image14.jpg","Form in Focus","A composition-led study that asks the viewer to notice form first, then discover the smaller visual decisions.",4.6,4.7],
+      ["image24.jpg","A Different Angle","A small experiment in perspective and visual emphasis, built around the feeling created by the chosen viewpoint.",4.7,4.8],
+      ["image27.jpg","Between the Lines","A reflective piece where the spaces around the subject are just as important as the marks themselves.",4.6,4.7],
+      ["image34.jpg","Gesture & Motion","An exploration of movement and energy, with the composition carrying a sense of direction and flow.",4.7,4.8],
+      ["image35.jpg","Tonal Notes","A study in visual tone and mood, with room to pause and notice the details at full size.",4.5,4.6],
+      ["image36.jpg","The Shape of an Idea","A creative experiment that captures a thought in visual form, leaving space for the viewer's own interpretation.",4.6,4.7],
+      ["i5.jpg","Sketchbook No. 05","A personal study from the collection, preserving the character of the original rather than forcing it into a crop.",4.7,4.8],
+      ["i6.jpg","Sketchbook No. 06","A moment from the ongoing practice: exploratory, personal, and best viewed with its full proportions intact.",4.6,4.7],
+      ["image38.jpg","A Small Discovery","A detail-led study that makes the most of its own proportions and rewards a little extra attention.",4.7,4.8],
+      ["i13.jpg","From the Sketchbook","A glimpse into the artist's collection, where experimentation and the process of learning are part of the finished story.",4.8,4.7],
+      ["image15.jpg","An Open Study","An open-ended visual study, inviting different readings rather than insisting on a single interpretation.",4.5,4.6],
+      ["image19.jpg","Selected Study","A featured piece from the collection, presented with space around it so the composition can speak for itself.",4.8,4.9],
+      ["image20.jpg","A Moment in Form","A study of form and feeling, where the atmosphere around the image is part of the viewing experience.",4.6,4.8],
+      ["image23.jpg","Stillness & Detail","A quieter entry in the collection, made for taking time with the shapes, texture, and smaller decisions.",4.7,4.8],
+      ["image29.jpg","A Personal Experiment","A creative experiment from the wider collection, showing how a single image can suggest its own mood.",4.6,4.7],
+      ["image30.jpg","Quiet Contrast","A form exploration that uses contrast to give the image a sense of depth and visual focus.",4.8,4.8],
+      ["image39.jpg","In Progress","A visual experiment that keeps the feeling of discovery alive, with details worth revisiting at full size.",4.6,4.7],
+      ["image40.jpg","Another Perspective","A fresh perspective within the collection, framed by a scene chosen to complement rather than compete with it.",4.7,4.8],
+      ["i12.jpg","A Layered Impression","A layered study from the sketchbook, presented without tight cropping so the complete artwork remains visible.",4.7,4.9],
+      ["i11.jpg","Lines & Layers II","A companion sketchbook study that celebrates the personality of the original marks and their natural arrangement.",4.7,4.7],
+      ["i4.jpg","Sketchbook No. 04","A personal work-in-progress moment, given room to breathe and be viewed in its original proportions.",4.5,4.6],
+      ["i14.jpg","Closing Notes","A final note in this selection, inviting one last look at the details, tone, and character of the piece.",4.6,4.8]
+    ];
+    const scenes = [
+      ["#d8a26b","#4b2528"],["#7b9caa","#24364a"],["#c3a6d6","#48365f"],["#d7c58d","#47533e"],
+      ["#c68c70","#402d38"],["#e5c38b","#364d58"],["#9fb6a0","#2f443c"],["#d7a5a0","#4b2938"],
+      ["#8bb8b0","#273d52"],["#c9b1df","#3e345c"],["#d6a35d","#593b26"],["#a3b5d1","#303c62"],
+      ["#e0b5a4","#6b3d4a"],["#d1b78c","#4d543e"],["#8db7c9","#2a4054"],["#c5a2a2","#49314b"],
+      ["#a9bf9a","#354e40"],["#d9bd89","#57452e"],["#e4bf77","#603d2b"],["#a5b6d4","#35395b"],
+      ["#c4a7a0","#3f3446"],["#94b9ad","#2d4b4d"],["#d8b2a0","#593d46"],["#9ba9c9","#303c5a"],
+      ["#dfc28c","#4c4931"],["#c8a0c7","#433052"],["#d9a78e","#4e3034"],["#a4b6a3","#2f433d"],["#d3b0a0","#49364b"]
+    ];
+    const palette = scenes.map((scene,i)=>({a:scene[0],b:scene[1],glow:scene[0]+"88",glow2:scene[1]+"bb"}));
+    const grid = document.getElementById("gallery-grid");
+    let current = 0;
+    let lastFocus = null;
+    // Add featured-girl to the exact image file once identified by its owner.
+    artworks.forEach((art,i)=>{
+      const p=palette[i];
+      const card=document.createElement("article");
+      card.className="gallery-card";
+      card.style.setProperty("--glow",p.glow);
+      card.style.setProperty("--glow2",p.glow2);
+      card.innerHTML='<span class="gallery-number">'+String(i+1).padStart(2,"0")+'</span><button class="gallery-thumb" type="button" aria-label="Open '+art[1]+' at full size"><img src="'+art[0]+'" alt="'+art[1]+'" loading="lazy"><span class="view-label">View full image ↗</span></button><div class="gallery-info"><div><h2>'+art[1]+'</h2><p>'+art[2]+'</p></div><div class="ratings"><span class="rating">Art <strong>★ '+art[3].toFixed(1)+'</strong></span><span class="rating">Scene <strong>★ '+art[4].toFixed(1)+'</strong></span></div></div>';
+      card.querySelector("button").addEventListener("click",()=>openArtwork(i));
+      grid.appendChild(card);
+    });
+    const lightbox=document.getElementById("lightbox");
+    const image=document.getElementById("lightbox-image");
+    function openArtwork(index){
+      current=(index+artworks.length)%artworks.length;
+      lastFocus=document.activeElement;
+      const art=artworks[current],p=palette[current];
+      image.src=art[0];image.alt=art[1];
+      document.getElementById("lightbox-kicker").textContent="Artwork "+String(current+1).padStart(2,"0")+" / "+String(artworks.length).padStart(2,"0");
+      document.getElementById("lightbox-title").textContent=art[1];
+      document.getElementById("lightbox-description").textContent=art[2];
+      document.getElementById("art-rating").textContent="★ "+art[3].toFixed(1)+"/5";
+      document.getElementById("scene-rating").textContent="★ "+art[4].toFixed(1)+"/5";
+      document.getElementById("lightbox-scene").style.setProperty("--scene-a",p.a);
+      document.getElementById("lightbox-scene").style.setProperty("--scene-b",p.b);
+      lightbox.classList.add("open");document.body.style.overflow="hidden";
+      document.getElementById("close-lightbox").focus();
     }
-    </script> 
+    function closeArtwork(){lightbox.classList.remove("open");document.body.style.overflow="";if(lastFocus)lastFocus.focus();}
+    document.getElementById("close-lightbox").addEventListener("click",closeArtwork);
+    document.getElementById("prev-art").addEventListener("click",()=>openArtwork(current-1));
+    document.getElementById("next-art").addEventListener("click",()=>openArtwork(current+1));
+    lightbox.addEventListener("click",e=>{if(e.target===lightbox)closeArtwork()});
+    document.addEventListener("keydown",e=>{
+      if(!lightbox.classList.contains("open"))return;
+      if(e.key==="Escape")closeArtwork();
+      if(e.key==="ArrowRight")openArtwork(current+1);
+      if(e.key==="ArrowLeft")openArtwork(current-1);
+    });
+    document.getElementById("year").textContent=new Date().getFullYear();
+    const toggle=document.querySelector(".menu-toggle"),nav=document.querySelector(".site-nav");
+    toggle.addEventListener("click",()=>{const open=toggle.getAttribute("aria-expanded")==="true";toggle.setAttribute("aria-expanded",String(!open));nav.classList.toggle("is-open",!open)});
+    nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{toggle.setAttribute("aria-expanded","false");nav.classList.remove("is-open")}));
+  </script>
 </body>
 </html>
