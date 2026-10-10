@@ -77,7 +77,7 @@
       ["image40.jpg","Another Perspective","A fresh perspective within the collection, framed by a scene chosen to complement rather than compete with it.",4.7,4.8],
       ["i12.jpg","A Layered Impression","A layered study from the sketchbook, presented without tight cropping so the complete artwork remains visible.",4.7,4.9],
       ["i11.jpg","Lines & Layers II","A companion sketchbook study that celebrates the personality of the original marks and their natural arrangement.",4.7,4.7],
-      ["i4.jpg","Sketchbook No. 04","A personal work-in-progress moment, given room to breathe and be viewed in its original proportions.",4.5,4.6],
+      ["i4.jpg","The Girl in Spectacles","A featured portrait in the collection, framed with a warm, elegant atmosphere that brings attention to her expression while preserving the full artwork.",4.9,4.9],
       ["i14.jpg","Closing Notes","A final note in this selection, inviting one last look at the details, tone, and character of the piece.",4.6,4.8]
     ];
     const scenes = [
@@ -93,11 +93,10 @@
     const grid = document.getElementById("gallery-grid");
     let current = 0;
     let lastFocus = null;
-    // Add featured-girl to the exact image file once identified by its owner.
     artworks.forEach((art,i)=>{
       const p=palette[i];
       const card=document.createElement("article");
-      card.className="gallery-card";
+      card.className="gallery-card"+(art[0]==="i4.jpg"?" featured-girl":"");
       card.style.setProperty("--glow",p.glow);
       card.style.setProperty("--glow2",p.glow2);
       card.innerHTML='<span class="gallery-number">'+String(i+1).padStart(2,"0")+'</span><button class="gallery-thumb" type="button" aria-label="Open '+art[1]+' at full size"><img src="'+art[0]+'" alt="'+art[1]+'" loading="lazy"><span class="view-label">View full image ↗</span></button><div class="gallery-info"><div><h2>'+art[1]+'</h2><p>'+art[2]+'</p></div><div class="ratings"><span class="rating">Art <strong>★ '+art[3].toFixed(1)+'</strong></span><span class="rating">Scene <strong>★ '+art[4].toFixed(1)+'</strong></span></div></div>';
