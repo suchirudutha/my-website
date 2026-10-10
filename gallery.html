@@ -37,7 +37,7 @@
     </section>
     <section class="gallery-grid" id="gallery-grid" aria-label="Artwork collection"></section>
   </main>
-  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">S.</span><span>SUCHIR<span class="brand-muted">GALLERY</span></span></a><p>A personal collection of art, ideas, and ongoing experiments.</p><div class="footer-links"><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="Contact.html">Contact</a><a href="https://www.instagram.com/__suchir__/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/suchir-udutha-375985212" target="_blank" rel="noreferrer">LinkedIn ↗</a></div><div class="footer-bottom"><span>© <span id="year">2026</span> Suchir Gallery</span><span>Made with intention.</span></div></footer>
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">S.</span><span>SUCHIR<span class="brand-muted">GALLERY</span></span></a><p>A personal collection of art, ideas, and ongoing experiments.</p><div class="footer-links"><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="Contact.html">Contact</a><a href="https://www.instagram.com/a_sketcher_art/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/suchir-udutha-375985212" target="_blank" rel="noreferrer">LinkedIn ↗</a></div><div class="footer-bottom"><span>© <span id="year">2026</span> Suchir Gallery</span><span>Made with intention.</span></div></footer>
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
     <div class="lightbox-scene" id="lightbox-scene"></div>
     <button class="lightbox-close" id="close-lightbox" aria-label="Close artwork view">×</button>
@@ -51,7 +51,6 @@
   <script>
     const artworks = [
       ["image1.jpg","First Impressions","An opening study in visual balance, where the first lines set the mood and invite a slower look.",4.6,4.8],
-      ["image2.jpg","Quiet Geometry","A study of shape and spacing. The composition rewards a second look at how the elements sit together.",4.5,4.7],
       ["image3.jpg","Soft Contrast","A visual exploration of contrast, subtle detail, and the character that emerges between light and shadow.",4.7,4.6],
       ["image4.jpg","A Study in Rhythm","A collection of marks and forms that gives the eye a gentle path through the composition.",4.6,4.8],
       ["image11.jpg","Lines & Layers","An expressive sketchbook moment, with the marks and layers giving the piece its own handmade character.",4.8,4.7],
@@ -69,9 +68,6 @@
       ["i13.jpg","From the Sketchbook","A glimpse into the artist's collection, where experimentation and the process of learning are part of the finished story.",4.8,4.7],
       ["image15.jpg","An Open Study","An open-ended visual study, inviting different readings rather than insisting on a single interpretation.",4.5,4.6],
       ["image19.jpg","Selected Study","A featured piece from the collection, presented with space around it so the composition can speak for itself.",4.8,4.9],
-      ["image20.jpg","A Moment in Form","A study of form and feeling, where the atmosphere around the image is part of the viewing experience.",4.6,4.8],
-      ["image23.jpg","Stillness & Detail","A quieter entry in the collection, made for taking time with the shapes, texture, and smaller decisions.",4.7,4.8],
-      ["image29.jpg","A Personal Experiment","A creative experiment from the wider collection, showing how a single image can suggest its own mood.",4.6,4.7],
       ["image30.jpg","Quiet Contrast","A form exploration that uses contrast to give the image a sense of depth and visual focus.",4.8,4.8],
       ["image39.jpg","In Progress","A visual experiment that keeps the feeling of discovery alive, with details worth revisiting at full size.",4.6,4.7],
       ["image40.jpg","Another Perspective","A fresh perspective within the collection, framed by a scene chosen to complement rather than compete with it.",4.7,4.8],
@@ -81,13 +77,13 @@
       ["i14.jpg","Closing Notes","A final note in this selection, inviting one last look at the details, tone, and character of the piece.",4.6,4.8]
     ];
     const scenes = [
-      ["#d8a26b","#4b2528"],["#7b9caa","#24364a"],["#c3a6d6","#48365f"],["#d7c58d","#47533e"],
-      ["#c68c70","#402d38"],["#e5c38b","#364d58"],["#9fb6a0","#2f443c"],["#d7a5a0","#4b2938"],
-      ["#8bb8b0","#273d52"],["#c9b1df","#3e345c"],["#d6a35d","#593b26"],["#a3b5d1","#303c62"],
-      ["#e0b5a4","#6b3d4a"],["#d1b78c","#4d543e"],["#8db7c9","#2a4054"],["#c5a2a2","#49314b"],
-      ["#a9bf9a","#354e40"],["#d9bd89","#57452e"],["#e4bf77","#603d2b"],["#a5b6d4","#35395b"],
-      ["#c4a7a0","#3f3446"],["#94b9ad","#2d4b4d"],["#d8b2a0","#593d46"],["#9ba9c9","#303c5a"],
-      ["#dfc28c","#4c4931"],["#c8a0c7","#433052"],["#d9a78e","#4e3034"],["#a4b6a3","#2f433d"],["#d3b0a0","#49364b"]
+      ["#d8a26b","#4b2528"],["#c3a6d6","#48365f"],["#d7c58d","#47533e"],["#c68c70","#402d38"],
+      ["#e5c38b","#364d58"],["#9fb6a0","#2f443c"],["#d7a5a0","#4b2938"],["#8bb8b0","#273d52"],
+      ["#c9b1df","#3e345c"],["#d6a35d","#593b26"],["#a3b5d1","#303c62"],["#e0b5a4","#6b3d4a"],
+      ["#d1b78c","#4d543e"],["#8db7c9","#2a4054"],["#c5a2a2","#49314b"],["#a9bf9a","#354e40"],
+      ["#d9bd89","#57452e"],["#e4bf77","#603d2b"],["#d8b2a0","#593d46"],["#9ba9c9","#303c5a"],
+      ["#dfc28c","#4c4931"],["#c8a0c7","#433052"],["#d9a78e","#4e3034"],["#a4b6a3","#2f433d"],
+      ["#d3b0a0","#49364b"]
     ];
     const palette = scenes.map((scene,i)=>({a:scene[0],b:scene[1],glow:scene[0]+"88",glow2:scene[1]+"bb"}));
     const grid = document.getElementById("gallery-grid");
